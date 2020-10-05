@@ -7,15 +7,14 @@
   </head>
   <body id="page-top">
 
-    <!-- display username n balance once logged in -->
-    <% if User.is_logged_in?(session) %>
-      <h1>Welcome, <%= @current_user[:username] %>!</h1>
-      <h3>Your Balance: <%= @current_user[:password] %></h3>
+    <% if Helpers.is_logged_in?(session) %>
+      <h1>Welcome <%= Helpers.current_user(session).username %></h1>
+      <h3>Your Balance: <%= Helpers.current_user(session).balance.to_f %></h3>
+      <h4><a href="/logout">Log Out</a></h4>
     <% else %>
-    <a href="/">Back to home page</a>
+      <h3>You Must <a href="/">Log In</a> to View Your Balance</h3>
     <% end %>
-    <br>
-    <a href="/logout">Log Out</a>
+    
 
   </body>
 </html>
