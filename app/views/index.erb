@@ -2,12 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>FlatBank Home</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
     <h1>Welcome to FlatBank</h1>
     <h3>Log In Please</h3>
+      
+      <form action="/login" method="POST">
+        <p>
+          <label for="username">Username:</label>
+          <input type="text" name="username">
+        </p>
+
+        <p>
+        <label for="password">Password:</label>
+        <input type="password" name="username">
+      </p>
+
+      <button name="login">Log In</button>
+    </form>
 
   </body>
 </html>
